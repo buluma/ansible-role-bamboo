@@ -1,0 +1,97 @@
+---
+- name: Set binary folder
+  ansible.builtin.set_fact:
+    bamboo_master_binary_folder: "{{ bamboo_master_application_folder }}/atlassian-bamboo-{{ bamboo_master_version }}"
+
+- name: Add local user
+  ansible.builtin.user:
+    name: "{{ bamboo_master_user }}"
+    createhome: no
+
+- name: Create app and data folders
+  ansible.builtin.file:
+    name: "{{ item }}"
+    state: directory
+    owner: "{{ bamboo_master_user }}"
+    group: "{{ bamboo_master_user }}"
+  with_items:
+    - "{{ bamboo_master_application_folder }}"
+    - "{{ bamboo_master_data_folder }}"
+
+- name: Set local user home directory
+  ansible.builtin.user:
+    name: "{{ bamboo_master_user }}"
+    home: "{{ bamboo_master_data_folder }}"
+
+- name: Check for downgrade
+  ansible.builtin.fail:
+    msg: "Downgrades are not supported. Please set bamboo_master_version to higher or equal to {{ ansible_local.bamboo.version }}. Current value is {{ bamboo_master_version }}"
+  when:
+    - ansible_local is defined
+    - ansible_local.bamboo is defined
+    - ansible_local.bamboo.version is defined
+    - bamboo_master_version is version(ansible_local.bamboo.version, '<')
+
+- name: Stop when upgrade
+  ansible.builtin.service:
+    name: bamboo
+    state: stopped
+  when:
+    - ansible_local is defined
+    - ansible_local.bamboo is defined
+    - ansible_local.bamboo.version is defined
+    - bamboo_master_version is version(ansible_local.bamboo.version, '>')
+  notify: restart bamboo
+
+- name: Download and unpack bamboo
+  ansible.builtin.unarchive:
+    src: "https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-{{ bamboo_master_version }}.tar.gz"
+    dest: "{{ bamboo_master_application_folder }}"
+    remote_src: True
+    # keep our modified, newer files instead of overriding from the tarball
+    keep_newer: yes
+    owner: "{{ bamboo_master_user }}"
+    group: "{{ bamboo_master_user }}"
+    creates: "{{ bamboo_master_binary_folder }}"
+  changed_when: False
+
+- name: Include tomcat
+  include_tasks: tomcat.yml
+  when: bamboo_master_fqdn is defined or
+        bamboo_master_port is defined or
+        bamboo_master_https is defined
+
+- name: Install bamboo systemd unit script
+  ansible.builtin.template:
+    src: bamboo.service.j2
+    dest: /etc/systemd/system/bamboo.service
+    mode: 0744
+  when: ansible_service_mgr == 'systemd'
+  notify: restart bamboo
+
+- name: Install bamboo sysv init script
+  ansible.builtin.template:
+    src: bamboo.init.j2
+    dest: /etc/init.d/bamboo
+    mode: 0744
+  when: ansible_service_mgr != 'systemd'
+  notify: restart bamboo
+
+- name: Set bamboo.home property variable
+  ansible.builtin.template:
+    src: bamboo-init.properties
+    dest: "{{ bamboo_master_binary_folder }}/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties"
+    owner: "{{ bamboo_master_user }}"
+    group: "{{ bamboo_master_user }}"
+  notify: restart bamboo
+
+- name: Ensure daemon is reloaded (systemd)
+  ansible.builtin.systemd:
+    name: bamboo
+    daemon_reload: yes
+  when: "ansible_service_mgr == 'systemd'"
+
+- name: Ensure service is started at boot
+  ansible.builtin.service:
+    name: bamboo
+    enabled: yes

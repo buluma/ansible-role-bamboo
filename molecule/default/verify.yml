@@ -1,0 +1,18 @@
+---
+- name: Verify
+  hosts: all
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: verify bamboo is serving content.
+      ansible.builtin.uri:
+        url: http://localhost:8085
+        status_code: 200
+      register: bamboo_status
+      tags: verify
+
+    - name: verify bamboo status.
+      ansible.builtin.debug:
+        var: bamboo_status.msg
+      tags: verify

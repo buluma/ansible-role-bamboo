@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    bamboo_master_fqdn: localhost
+  tasks:
+    - name: "Include buluma.bamboo"
+      ansible.builtin.include_role:
+        name: "buluma.bamboo"
