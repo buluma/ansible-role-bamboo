@@ -13,10 +13,22 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
 ---
 - name: Converge
   hosts: all
-  tasks:
-    - name: "Include buluma.bamboo"
-      include_role:
-        name: "buluma.bamboo"
+  become: true
+
+  roles:
+    - role: buluma.bamboo
+```
+
+The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
+```yaml
+---
+- name: prepare
+  hosts: all
+  become: yes
+  gather_facts: no
+
+  roles:
+    - role: buluma.bootstrap
 ```
 
 
@@ -28,47 +40,31 @@ The default values for the variables are set in `defaults/main.yml`:
 # defaults file for bamboo
 
 # bamboo release.
-bamboo_release: "8.2"
+bamboo_master_version: 6.10.4
+bamboo_master_fqdn: ""
+bamboo_master_https: False
+bamboo_master_port: ""
 
-# bamboo version.
-bamboo_version: "{{ _bamboo_version[bamboo_release] }}"
+bamboo_master_include_jdk: True
+bamboo_master_openjdk_version: 1.8.0
 
-# owner and group for Bamboo.
-bamboo_owner: "bamboo"
-bamboo_group: "bamboo"
-
-# bamboo home directory.
-bamboo_home: "/var/atlassian/application-data/bamboo"
-
-# bamboo installation directory.
-bamboo_catalina: "/opt/atlassian/bamboo"
-
-# JVM minimal and maximum memory usage.
-bamboo_jvm_minimum_memory: "2048m"
-bamboo_jvm_maximum_memory: "2048m"
-
-# proxy and context path setup.
-bamboo_catalina_connector_proxyname: ~
-bamboo_catalina_connector_proxyport: ~
-bamboo_catalina_connector_scheme: "http"
-bamboo_catalina_connector_secure: "false"
-bamboo_catalina_context_path: ~
-
-# atlassian Support recommended JVM arguments.
-bamboo_jvm_support_recommended_args: >-
-  -Datlassian.plugins.enable.wait=300
-  -XX:+UnlockExperimentalVMOptions
-  -XX:+UseCGroupMemoryLimitForHeap
-  -XX:MaxRAMFraction=1
-
-# session timeout (in minutes).
-bamboo_session_timeout: "120"
+bamboo_master_user: bamboo
+bamboo_master_application_folder: "/opt/atlassian/bamboo"
+bamboo_master_data_folder: "/var/atlassian/application-data/bamboo"
+bamboo_master_jvm_memory: 1g
 ```
 
 ## [Requirements](#requirements)
 
 - pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-bamboo/blob/main/requirements.txt).
 
+## [Status of used roles](#status-of-requirements)
+
+The following roles are used to prepare a system. You can prepare your system in another way.
+
+| Requirement | GitHub | GitLab |
+|-------------|--------|--------|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-bootstrap)|
 
 ## [Context](#context)
 
@@ -84,10 +80,8 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|ubuntu|all|
 |oraclelinux|all|
 |opensuse|all|
-|debian|all|
 |fedora|36, 35|
 
 The minimum version of Ansible required is 4.10, tests have been done to:
