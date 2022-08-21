@@ -3,6 +3,7 @@
 # Ansible managed
 #
 exclude_paths:
+  - ./meta/preferences.yml
   - ./molecule/default/prepare.yml
   - ./molecule/default/converge.yml
   - ./molecule/default/verify.yml
@@ -11,3 +12,6 @@ exclude_paths:
   - ./.cache
   - ./.github
   - ./requirements.yml
+
+skip_list:
+  - risky-file-permissions
