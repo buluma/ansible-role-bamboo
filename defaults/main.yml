@@ -2,7 +2,7 @@
 # defaults file for bamboo
 
 # bamboo release.
-bamboo_master_version: 6.10.4
+bamboo_master_version: 9.0.0
 bamboo_master_fqdn: ""
 bamboo_master_https: False
 bamboo_master_port: ""

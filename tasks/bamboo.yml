@@ -8,6 +8,11 @@
     name: "{{ bamboo_master_user }}"
     createhome: no
 
+- name: Add local group
+  ansible.builtin.group:
+    name: "{{ bamboo_master_user }}"
+    state: present
+
 - name: Create app and data folders
   ansible.builtin.file:
     name: "{{ item }}"

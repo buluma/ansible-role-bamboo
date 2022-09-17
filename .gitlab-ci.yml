@@ -1,5 +1,5 @@
 ---
-image: "buluma/github-action-molecule:4.0.9"
+image: "buluma/github-action-molecule:5.0.0"
 
 services:
   - docker:dind
@@ -23,6 +23,10 @@ molecule:
         tag: "7"
       - image: "oraclelinux"
         tag: "8"
+      - image: "enterpriselinux"
+        tag: "7"
+      - image: "enterpriselinux"
+        tag: "8"
       - image: "docker-opensuse-systemd"
         tag: "latest"
       - image: "fedora-systemd"
@@ -44,6 +48,10 @@ testing:
       - image: "oraclelinux"
         tag: "7"
       - image: "oraclelinux"
+        tag: "8"
+      - image: "enterpriselinux"
+        tag: "7"
+      - image: "enterpriselinux"
         tag: "8"
       - image: "docker-opensuse-systemd"
         tag: "latest"
