@@ -5,14 +5,14 @@
   gather_facts: no
 
   tasks:
-    - name: verify bamboo is serving content.
+    - name: Verify bamboo is serving content.
       ansible.builtin.uri:
         url: http://localhost:8085
         status_code: 200
       register: bamboo_status
       tags: verify
 
-    - name: verify bamboo status.
+    - name: Verify bamboo status.
       ansible.builtin.debug:
         var: bamboo_status.msg
       tags: verify

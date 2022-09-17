@@ -14,6 +14,7 @@
     state: directory
     owner: "{{ bamboo_master_user }}"
     group: "{{ bamboo_master_user }}"
+    mode: "0755"
   with_items:
     - "{{ bamboo_master_application_folder }}"
     - "{{ bamboo_master_data_folder }}"
@@ -41,7 +42,7 @@
     - ansible_local.bamboo is defined
     - ansible_local.bamboo.version is defined
     - bamboo_master_version is version(ansible_local.bamboo.version, '>')
-  notify: restart bamboo
+  notify: Restart bamboo
 
 - name: Download and unpack bamboo
   ansible.builtin.unarchive:
@@ -67,7 +68,7 @@
     dest: /etc/systemd/system/bamboo.service
     mode: 0744
   when: ansible_service_mgr == 'systemd'
-  notify: restart bamboo
+  notify: Restart bamboo
 
 - name: Install bamboo sysv init script
   ansible.builtin.template:
@@ -75,7 +76,7 @@
     dest: /etc/init.d/bamboo
     mode: 0744
   when: ansible_service_mgr != 'systemd'
-  notify: restart bamboo
+  notify: Restart bamboo
 
 - name: Set bamboo.home property variable
   ansible.builtin.template:
@@ -83,7 +84,7 @@
     dest: "{{ bamboo_master_binary_folder }}/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties"
     owner: "{{ bamboo_master_user }}"
     group: "{{ bamboo_master_user }}"
-  notify: restart bamboo
+  notify: Restart bamboo
 
 - name: Ensure daemon is reloaded (systemd)
   ansible.builtin.systemd:
