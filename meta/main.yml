@@ -7,9 +7,6 @@ galaxy_info:
   license: Apache-2.0
   min_ansible_version: "4.10"
   platforms:
-    - name: OracleLinux
-      versions:
-        - all
     - name: EL
       versions:
         - "7"
