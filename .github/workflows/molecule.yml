@@ -43,13 +43,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "enterpriselinux"
-            tag: "7"
-          - image: "enterpriselinux"
-            tag: "8"
-          - image: "docker-opensuse-systemd"
-            tag: "latest"
-          - image: "fedora-systemd"
+          - image: "fedora-systemd" # TODO: check suse and debian @buluma
             tag: "latest"
           - image: "fedora-systemd"
             tag: "35"
