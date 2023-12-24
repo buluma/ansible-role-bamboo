@@ -1,10 +1,10 @@
-# [Ansible role bamboo](#bamboo)
+# Ansible role [bamboo](https://galaxy.ansible.com/ui/standalone/roles/buluma/bamboo/documentation)
 
 Ansible Role for Atlassian Bamboo Installation
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-bamboo/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-bamboo/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-bamboo.svg)](https://github.com/buluma/ansible-role-bamboo/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-bamboo.svg)](https://github.com/buluma/ansible-role-bamboo/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-bamboo.svg)](https://github.com/buluma/ansible-role-bamboo/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-bamboo/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-bamboo/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-bamboo.svg)](https://github.com/buluma/ansible-role-bamboo/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-bamboo.svg)](https://github.com/buluma/ansible-role-bamboo/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-bamboo.svg)](https://github.com/buluma/ansible-role-bamboo/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/bamboo)](https://galaxy.ansible.com/ui/standalone/roles/buluma/bamboo/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
