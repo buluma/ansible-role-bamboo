@@ -24,7 +24,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 
 ```yaml
 ---
-- name: prepare
+- name: Prepare
   hosts: all
   become: yes
   gather_facts: no
@@ -90,11 +90,11 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|7, 8|
+|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|all|
 |[opensuse](https://hub.docker.com/repository/docker/buluma/opensuse/general)|all|
 |[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|36, 35|
 
-The minimum version of Ansible required is 4.10, tests have been done to:
+The minimum version of Ansible required is 2.12, tests have been done to:
 
 - The previous version.
 - The current version.
