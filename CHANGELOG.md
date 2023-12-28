@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-bamboo/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v0.1.0...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#7](https://github.com/buluma/ansible-role-bamboo/issues/7)
+- check suse and debian @buluma [\#1](https://github.com/buluma/ansible-role-bamboo/issues/1)
+
 ## [v0.1.0](https://github.com/buluma/ansible-role-bamboo/tree/v0.1.0) (2023-12-24)
 
 [Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/70c0d216be007448dbf95044adbfbe92f81a62f0...v0.1.0)
