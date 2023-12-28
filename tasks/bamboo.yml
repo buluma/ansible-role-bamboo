@@ -62,7 +62,7 @@
   changed_when: False
 
 - name: bamboo | Include tomcat
-  include_tasks: tomcat.yml
+  ansible.builtin.import_tasks: tomcat.yml
   when: bamboo_master_fqdn is defined or
         bamboo_master_port is defined or
         bamboo_master_https is defined
