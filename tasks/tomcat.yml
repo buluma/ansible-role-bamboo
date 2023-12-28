@@ -1,9 +1,9 @@
 ---
-- name: Install python-lxml for ansible xml module
+- name: tomcat | Install python-lxml for ansible xml module
   ansible.builtin.package:
     name: python-lxml
 
-- name: Set tomcat connector proxyName in server.xml
+- name: tomcat | Set tomcat connector proxyName in server.xml
   community.general.xml:
     path: "{{ bamboo_master_binary_folder }}/conf/server.xml"
     xpath: /Server/Service/Connector
@@ -12,7 +12,7 @@
   when: bamboo_master_fqdn is defined
   notify: Restart bamboo
 
-- name: Set tomcat connector proxyPort server.xml
+- name: tomcat | Set tomcat connector proxyPort server.xml
   community.general.xml:
     path: "{{ bamboo_master_binary_folder }}/conf/server.xml"
     xpath: /Server/Service/Connector
@@ -21,7 +21,7 @@
   when: bamboo_master_port is defined
   notify: Restart bamboo
 
-- name: Set tomcat connector scheme server.xml
+- name: tomcat | Set tomcat connector scheme server.xml
   community.general.xml:
     path: "{{ bamboo_master_binary_folder }}/conf/server.xml"
     xpath: /Server/Service/Connector

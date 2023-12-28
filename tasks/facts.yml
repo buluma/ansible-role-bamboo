@@ -1,17 +1,17 @@
 ---
-- name: Ensure ansible facts folder exists
+- name: facts | Ensure ansible facts folder exists
   ansible.builtin.file:
     name: /etc/ansible/facts.d/
     state: directory
     recurse: yes
 
-- name: Ensure bamboo facts exists
+- name: facts | Ensure bamboo facts exists
   ansible.builtin.file:
     name: /etc/ansible/facts.d/bamboo.fact
     state: touch
   changed_when: False
 
-- name: Update bamboo facts
+- name: facts | Update bamboo facts
   ansible.builtin.template:
     src: bamboo.fact.j2
     dest: /etc/ansible/facts.d/bamboo.fact
