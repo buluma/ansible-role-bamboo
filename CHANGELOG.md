@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-bamboo/tree/HEAD)
+## [v0.2.0](https://github.com/buluma/ansible-role-bamboo/tree/v0.2.0) (2024-01-02)
 
-[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v0.1.1...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v0.1.1...v0.2.0)
 
 **Merged pull requests:**
 
