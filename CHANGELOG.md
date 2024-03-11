@@ -1,11 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-bamboo/tree/HEAD)
+## [v24.2.26](https://github.com/buluma/ansible-role-bamboo/tree/v24.2.26) (2024-02-19)
 
-[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v0.3.0...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v0.3.0...v24.2.26)
 
 **Merged pull requests:**
 
+- Bump release-drafter/release-drafter from 5 to 6 [\#12](https://github.com/buluma/ansible-role-bamboo/pull/12) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#11](https://github.com/buluma/ansible-role-bamboo/pull/11) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v0.3.0](https://github.com/buluma/ansible-role-bamboo/tree/v0.3.0) (2024-01-20)
