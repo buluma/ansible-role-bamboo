@@ -90,7 +90,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
+|[Fedora](https://hub.docker.com/r/buluma/fedora)|all|
 
 The minimum version of Ansible required is 2.12, tests have been done to:
 
