@@ -6,7 +6,7 @@
 - name: bamboo | Add local user
   ansible.builtin.user:
     name: "{{ bamboo_master_user }}"
-    createhome: no
+    createhome: false
 
 - name: bamboo | Add local group
   ansible.builtin.group:
@@ -55,7 +55,7 @@
     dest: "{{ bamboo_master_application_folder }}"
     remote_src: True
     # keep our modified, newer files instead of overriding from the tarball
-    keep_newer: yes
+    keep_newer: true
     owner: "{{ bamboo_master_user }}"
     group: "{{ bamboo_master_user }}"
     creates: "{{ bamboo_master_binary_folder }}"
@@ -94,10 +94,10 @@
 - name: bamboo | Ensure daemon is reloaded (systemd)
   ansible.builtin.systemd:
     name: bamboo
-    daemon_reload: yes
+    daemon_reload: true
   when: "ansible_service_mgr == 'systemd'"
 
 - name: bamboo | Ensure service is started at boot
   ansible.builtin.service:
     name: bamboo
-    enabled: yes
+    enabled: true

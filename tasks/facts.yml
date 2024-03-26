@@ -3,7 +3,7 @@
   ansible.builtin.file:
     name: /etc/ansible/facts.d/
     state: directory
-    recurse: yes
+    recurse: true
 
 - name: facts | Ensure bamboo facts exists
   ansible.builtin.file:
