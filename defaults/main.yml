@@ -4,10 +4,10 @@
 # bamboo release.
 bamboo_master_version: "9.0.0"
 bamboo_master_fqdn: ""
-bamboo_master_https: False
+bamboo_master_https: false
 bamboo_master_port: ""
 
-bamboo_master_include_jdk: True
+bamboo_master_include_jdk: true
 bamboo_master_openjdk_version: "1.8.0"
 
 bamboo_master_user: bamboo
