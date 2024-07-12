@@ -32,10 +32,12 @@
   args:
     warn: false
   shell: true
+  changed_when: false
 
 - name: java | Verify Java installation
   ansible.builtin.command: java -version
   register: java_version_output
+  changed_when: false
 
 - name: java | Debug installed Java version
   ansible.builtin.debug:
