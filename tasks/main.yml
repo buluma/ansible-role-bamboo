@@ -3,14 +3,14 @@
 # - include_tasks: jdk-{{ ansible_os_family }}.yml
 #   when: bamboo_master_include_jdk
 
-- name: Install, configure, java | RedHat.
-  ansible.builtin.yum:
-    name: "java-{{ bamboo_master_openjdk_version }}-openjdk"
-    state: installed
-  when: ansible_os_family == 'RedHat'
+# - name: Install, configure, java | RedHat.
+#   ansible.builtin.yum:
+#     name: "java-{{ bamboo_master_openjdk_version }}-openjdk"
+#     state: installed
+#   when: ansible_os_family == 'RedHat'
 
 - name: Install, configure, java | Debian | RedHat.
-  ansible.builtin.import_tasks: facts.yml
+  ansible.builtin.import_tasks: java.yml
 
 # - name: Install, configure, java | Debian.
 #   when: ansible_os_family == 'Debian'
