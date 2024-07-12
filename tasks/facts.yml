@@ -1,7 +1,7 @@
 ---
 - name: facts | Ensure ansible facts folder exists
   ansible.builtin.file:
-    name: /etc/ansible/facts.d/
+    path: /etc/ansible/facts.d/
     state: directory
     recurse: true
 

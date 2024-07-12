@@ -89,6 +89,7 @@
     dest: "{{ bamboo_master_binary_folder }}/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties"
     owner: "{{ bamboo_master_user }}"
     group: "{{ bamboo_master_user }}"
+    mode: '0644'
   notify: Restart bamboo
 
 - name: bamboo | Ensure daemon is reloaded (systemd)
