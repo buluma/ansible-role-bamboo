@@ -9,6 +9,9 @@
   ansible.builtin.file:
     path: /etc/ansible/facts.d/bamboo.fact
     state: touch
+    owner: root
+    group: root
+    mode: '0644'
   changed_when: false
 
 - name: facts | Update bamboo facts
