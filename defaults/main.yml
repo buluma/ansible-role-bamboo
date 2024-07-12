@@ -7,8 +7,8 @@ bamboo_master_fqdn: ''
 bamboo_master_https: false
 bamboo_master_port: ''
 bamboo_master_include_jdk: true
-# bamboo_master_openjdk_version: 1.8.0
-bamboo_master_openjdk_version: 17
+bamboo_master_openjdk_version: "1.8.0"
+# bamboo_master_openjdk_version: 17
 bamboo_master_user: bamboo
 bamboo_master_application_folder: /opt/atlassian/bamboo
 bamboo_master_data_folder: /var/atlassian/application-data/bamboo

@@ -38,4 +38,4 @@
 
 - name: java | Debug installed Java version
   ansible.builtin.debug:
-    msg: "Installed Java version: {{ java_version_output.stdout }}"
+    msg: "Installed Java version: {{ java_version_output }}"
