@@ -1,37 +1,42 @@
 ---
 - name: java | Install OpenJDK 17 on Debian-based systems
-  apt:
+  ansible.builtin.apt:
     name: openjdk-17-jdk
     state: present
   when: ansible_os_family == "Debian"
 
 - name: java | Install OpenJDK 17 on RedHat-based systems
-  yum:
+  ansible.builtin.yum:
     name: java-17-openjdk
     state: present
   when: ansible_os_family == "RedHat"
 
-- name: java | Ensure correct Java version is set
-  lineinfile:
+- name: java | Ensure correct Java version is set for Debian-based systems
+  ansible.builtin.lineinfile:
     path: /etc/environment
     line: JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-    create: yes
+    create: true
+    mode: '0644'
   when: ansible_os_family == "Debian"
 
-- name: java | Ensure correct Java version is set
-  lineinfile:
+- name: java | Ensure correct Java version is set for RedHat-based systems
+  ansible.builtin.lineinfile:
     path: /etc/environment
     line: JAVA_HOME=/usr/lib/jvm/java-17-openjdk
-    create: yes
+    create: true
+    mode: '0644'
   when: ansible_os_family == "RedHat"
 
 - name: java | Apply the environment changes
-  command: source /etc/environment
-  shell: yes
+  ansible.builtin.command: source /etc/environment
+  args:
+    warn: false
+  shell: true
 
 - name: java | Verify Java installation
-  command: java -version
+  ansible.builtin.command: java -version
   register: java_version_output
 
-- debug:
+- name: java | Debug installed Java version
+  ansible.builtin.debug:
     msg: "Installed Java version: {{ java_version_output.stdout }}"
