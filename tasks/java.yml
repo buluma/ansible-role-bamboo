@@ -1,0 +1,37 @@
+---
+- name: java | Install OpenJDK 17 on Debian-based systems
+  apt:
+    name: openjdk-17-jdk
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: java | Install OpenJDK 17 on RedHat-based systems
+  yum:
+    name: java-17-openjdk
+    state: present
+  when: ansible_os_family == "RedHat"
+
+- name: java | Ensure correct Java version is set
+  lineinfile:
+    path: /etc/environment
+    line: JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+    create: yes
+  when: ansible_os_family == "Debian"
+
+- name: java | Ensure correct Java version is set
+  lineinfile:
+    path: /etc/environment
+    line: JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+    create: yes
+  when: ansible_os_family == "RedHat"
+
+- name: java | Apply the environment changes
+  command: source /etc/environment
+  shell: yes
+
+- name: java | Verify Java installation
+  command: java -version
+  register: java_version_output
+
+- debug:
+    msg: "Installed Java version: {{ java_version_output.stdout }}"

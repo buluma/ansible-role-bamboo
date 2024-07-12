@@ -9,23 +9,26 @@
     state: installed
   when: ansible_os_family == 'RedHat'
 
-- name: Install, configure, java | Debian.
-  when: ansible_os_family == 'Debian'
-  block:
-    - name: Add OpenJDK PPA for Ubuntu 14.04 and lower
-      ansible.builtin.apt_repository:
-        repo: ppa:openjdk-r/ppa
-      when: (ansible_distribution == "Ubuntu" and ansible_distribution_major_version <= "14")
+- name: Install, configure, java | Debian | RedHat.
+  ansible.builtin.import_tasks: facts.yml
 
-    - name: Install OpenJDK
-      ansible.builtin.apt:
-        name: openjdk-{{ bamboo_master_openjdk_version.split('.')[-2] }}-jdk
-        cache_valid_time: 1800
-
-    - name: Set default java to OpenJDK
-      community.general.alternatives:
-        name: java
-        path: /usr/lib/jvm/java-8-openjdk-arm64/jre/bin/java
+# - name: Install, configure, java | Debian.
+#   when: ansible_os_family == 'Debian'
+#   block:
+#     - name: Add OpenJDK PPA for Ubuntu 14.04 and lower
+#       ansible.builtin.apt_repository:
+#         repo: ppa:openjdk-r/ppa
+#       when: (ansible_distribution == "Ubuntu" and ansible_distribution_major_version <= "14")
+#
+#     - name: Install OpenJDK
+#       ansible.builtin.apt:
+#         name: openjdk-{{ bamboo_master_openjdk_version.split('.')[-2] }}-jdk
+#         cache_valid_time: 1800
+#
+#     - name: Set default java to OpenJDK
+#       community.general.alternatives:
+#         name: java
+#         path: /usr/lib/jvm/java-8-openjdk-arm64/jre/bin/java
 
 - name: Import bamboo task
   ansible.builtin.import_tasks: bamboo.yml
