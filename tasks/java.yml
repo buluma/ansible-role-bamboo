@@ -28,9 +28,7 @@
   when: ansible_os_family == "RedHat"
 
 - name: java | Apply the environment changes
-  ansible.builtin.command: source /etc/environment
-  args:
-    warn: false
+  ansible.builtin.shell: source /etc/environment
   changed_when: false
 
 - name: java | Verify Java installation
