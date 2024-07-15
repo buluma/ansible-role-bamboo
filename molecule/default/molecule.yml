@@ -22,11 +22,13 @@ platforms:
     cgroupns_mode: host
     privileged: true
     pre_build_image: true
+    capabilities:
+      - SYS_ADMIN
     published_ports:
       - 8085/tcp
       - 127.0.0.1:8085/tcp
       - 127.0.0.1:8085
-      - 0.0.0.0:8085->8085/tcp 
+      - 0.0.0.0:8085->8085/tcp
 provisioner:
   name: ansible
 verifier:
