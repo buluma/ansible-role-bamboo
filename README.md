@@ -47,17 +47,16 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # defaults file for bamboo
 
 # bamboo release.
-bamboo_master_version: "9.0.0"
-bamboo_master_fqdn: ""
-bamboo_master_https: False
-bamboo_master_port: ""
-
-bamboo_master_include_jdk: True
+bamboo_master_version: "9.4.4"
+bamboo_master_fqdn: ''
+bamboo_master_https: false
+bamboo_master_port: ''
+bamboo_master_include_jdk: true
 bamboo_master_openjdk_version: "1.8.0"
-
+# bamboo_master_openjdk_version: 17
 bamboo_master_user: bamboo
-bamboo_master_application_folder: "/opt/atlassian/bamboo"
-bamboo_master_data_folder: "/var/atlassian/application-data/bamboo"
+bamboo_master_application_folder: /opt/atlassian/bamboo
+bamboo_master_data_folder: /var/atlassian/application-data/bamboo
 bamboo_master_jvm_memory: 1g
 ```
 
