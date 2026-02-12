@@ -17,7 +17,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   become: true
 
   roles:
-    - role: ansible-role-bamboo
+    - role: buluma.bamboo
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-bamboo/blob/master/molecule/default/prepare.yml):
