@@ -16,7 +16,7 @@
     path: /etc/environment
     line: JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
     create: true
-    mode: '0644'
+    mode: "0644"
   when: ansible_os_family == "Debian"
 
 - name: java | Ensure correct Java version is set for RedHat-based systems
@@ -24,7 +24,7 @@
     path: /etc/environment
     line: JAVA_HOME=/usr/lib/jvm/java-17-openjdk
     create: true
-    mode: '0644'
+    mode: "0644"
   when: ansible_os_family == "RedHat"
 
 - name: java | Apply the environment changes

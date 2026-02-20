@@ -64,8 +64,8 @@
 - name: bamboo | Include tomcat
   ansible.builtin.import_tasks: tomcat.yml
   when: bamboo_master_fqdn is defined or
-        bamboo_master_port is defined or
-        bamboo_master_https is defined
+    bamboo_master_port is defined or
+    bamboo_master_https is defined
 
 - name: bamboo | Install bamboo systemd unit script
   ansible.builtin.template:
@@ -89,7 +89,7 @@
     dest: "{{ bamboo_master_binary_folder }}/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties"
     owner: "{{ bamboo_master_user }}"
     group: "{{ bamboo_master_user }}"
-    mode: '0644'
+    mode: "0644"
   notify: Restart bamboo
 
 - name: bamboo | Ensure daemon is reloaded (systemd)
