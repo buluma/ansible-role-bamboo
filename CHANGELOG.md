@@ -9,6 +9,10 @@
 - Update action [\#6](https://github.com/buluma/ansible-role-bamboo/issues/6)
 - rebuild action [\#5](https://github.com/buluma/ansible-role-bamboo/issues/5)
 
+**Merged pull requests:**
+
+- Bump actions/checkout from 4 to 6 [\#18](https://github.com/buluma/ansible-role-bamboo/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v24.3.31](https://github.com/buluma/ansible-role-bamboo/tree/v24.3.31) (2024-03-26)
 
 [Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v24.2.26...v24.3.31)
