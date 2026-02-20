@@ -4,7 +4,7 @@
 #   when: bamboo_master_include_jdk
 
 - name: Install, configure, java | RedHat.
-  ansible.builtin.yum:
+  ansible.builtin.dnf:
     name: "java-{{ bamboo_master_openjdk_version }}-openjdk"
     state: installed
   when: ansible_os_family == 'RedHat'

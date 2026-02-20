@@ -48,9 +48,9 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 
 # bamboo release.
 bamboo_master_version: "9.4.4"
-bamboo_master_fqdn: ''
+bamboo_master_fqdn: ""
 bamboo_master_https: false
-bamboo_master_port: ''
+bamboo_master_port: ""
 bamboo_master_include_jdk: true
 bamboo_master_openjdk_version: "1.8.0"
 # bamboo_master_openjdk_version: 17

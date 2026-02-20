@@ -6,7 +6,7 @@
   when: ansible_os_family == "Debian"
 
 - name: java | Install OpenJDK 17 on RedHat-based systems
-  ansible.builtin.yum:
+  ansible.builtin.dnf:
     name: java-17-openjdk
     state: present
   when: ansible_os_family == "RedHat"
@@ -28,7 +28,7 @@
   when: ansible_os_family == "RedHat"
 
 - name: java | Apply the environment changes
-  ansible.builtin.shell: source /etc/environment
+  ansible.builtin.command: source /etc/environment
   changed_when: false
 
 - name: java | Verify Java installation

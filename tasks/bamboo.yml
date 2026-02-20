@@ -31,7 +31,8 @@
 
 - name: bamboo | Check for downgrade
   ansible.builtin.fail:
-    msg: "Downgrades are not supported. Please set bamboo_master_version to higher or equal to {{ ansible_local.bamboo.version }}. Current value is {{ bamboo_master_version }}"
+    msg: "Downgrades are not supported. Please set bamboo_master_version to higher or equal to {{ ansible_local.bamboo.version }}. Current value is {{ bamboo_master_version
+      }}"
   when:
     - ansible_local is defined
     - ansible_local.bamboo is defined
@@ -63,15 +64,13 @@
 
 - name: bamboo | Include tomcat
   ansible.builtin.import_tasks: tomcat.yml
-  when: bamboo_master_fqdn is defined or
-    bamboo_master_port is defined or
-    bamboo_master_https is defined
+  when: bamboo_master_fqdn is defined or bamboo_master_port is defined or bamboo_master_https is defined
 
 - name: bamboo | Install bamboo systemd unit script
   ansible.builtin.template:
     src: bamboo.service.j2
     dest: /etc/systemd/system/bamboo.service
-    mode: 0744
+    mode: "0744"
   when: ansible_service_mgr == 'systemd'
   notify: Restart bamboo
 
@@ -79,7 +78,7 @@
   ansible.builtin.template:
     src: bamboo.init.j2
     dest: /etc/init.d/bamboo
-    mode: 0744
+    mode: "0744"
   when: ansible_service_mgr != 'systemd'
   notify: Restart bamboo
 
