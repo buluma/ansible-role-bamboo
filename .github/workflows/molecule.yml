@@ -10,12 +10,16 @@ on:
     branches:
       - master
       - main
+      - codex
+      - testing
   pull_request:
     branches:
       - master
       - main
+      - codex
+      - testing
   schedule:
-    - cron: "3 2 2 * *"
+    - cron: '3 2 2 * *'
 
   workflow_dispatch:
 
@@ -40,10 +44,8 @@ jobs:
       fail-fast: false
       matrix:
         distro:
-          - image: "docker-molecule-images"
-            tag: "fedora_latest"
-          - image: "docker-molecule-images"
-            tag: "fedora45"
+          - image: "fedora"
+            tag: "latest"
     steps:
       - name: checkout
         uses: actions/checkout@v6
