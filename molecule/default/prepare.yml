@@ -5,7 +5,7 @@
   gather_facts: false
 
   roles:
-  - role: buluma.bootstrap
-  - role: buluma.core_dependencies
-  - role: buluma.setuptools
-  - role: buluma.openssl
+    - role: buluma.bootstrap
+    - role: buluma.core_dependencies
+    - role: buluma.setuptools
+    - role: buluma.openssl

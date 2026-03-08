@@ -4,4 +4,4 @@
   become: true
 
   roles:
-  - role: buluma.bamboo
+    - role: buluma.bamboo

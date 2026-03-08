@@ -31,7 +31,8 @@
 
 - name: bamboo | Check for downgrade
   ansible.builtin.fail:
-    msg: "Downgrades are not supported. Please set bamboo_master_version to higher or equal to {{ ansible_local.bamboo.version }}. Current value is {{ bamboo_master_version
+    msg:
+      "Downgrades are not supported. Please set bamboo_master_version to higher or equal to {{ ansible_local.bamboo.version }}. Current value is {{ bamboo_master_version
       }}"
   when:
     - ansible_local is defined
