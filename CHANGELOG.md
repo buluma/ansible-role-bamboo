@@ -11,6 +11,7 @@
 
 **Merged pull requests:**
 
+- Bump docker/setup-buildx-action from 3 to 4 [\#19](https://github.com/buluma/ansible-role-bamboo/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/checkout from 4 to 6 [\#18](https://github.com/buluma/ansible-role-bamboo/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v24.3.31](https://github.com/buluma/ansible-role-bamboo/tree/v24.3.31) (2024-03-26)
