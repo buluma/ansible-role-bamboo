@@ -4,6 +4,6 @@ roles:
   - name: buluma.openssl
   - name: buluma.core_dependencies
   - name: buluma.setuptools
-collections: []
+collections:
   - name: community.mysql
   - name: community.general
