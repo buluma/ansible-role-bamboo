@@ -5,5 +5,5 @@ roles:
   - name: buluma.core_dependencies
   - name: buluma.setuptools
 collections:
-  - name: community.mysql
+  - name: ansible.mysql
   - name: community.general
