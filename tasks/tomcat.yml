@@ -1,7 +1,7 @@
 ---
 - name: tomcat | Install python-lxml for ansible xml module
   ansible.builtin.package:
-    name: python-lxml
+    name: python3-lxml
 
 - name: tomcat | Set tomcat connector proxyName in server.xml
   community.general.xml:
