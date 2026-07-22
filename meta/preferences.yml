@@ -12,12 +12,9 @@ platforms:
       # Excludes 13: no openjdk-17-jdk package, same reason as EL 10 above.
       - "12"
       - "11"
-  - name: Fedora
-    versions:
-      # Excludes 45: it ships Python 3.15.0b3, whose dataclasses module
-      # dropped _is_type, breaking ansible-core's AnsiballZ module wrapper.
-      # Excludes 44: no java-17-openjdk package, same reason as EL 10 above.
-      - "43"
+  # Fedora excluded entirely: java-17-openjdk was only ever packaged
+  # through Fedora 41 (already EOL); no currently-supported Fedora
+  # release can satisfy this role's Java 17 requirement.
   - name: Ubuntu
     versions:
       - all
