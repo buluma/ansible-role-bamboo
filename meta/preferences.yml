@@ -4,16 +4,19 @@
 platforms:
   - name: EL
     versions:
-      - "10"
+      # Excludes 10: no java-17-openjdk package; Bamboo's supported Java
+      # version for this role's pinned Bamboo release is 17, not 21.
       - "9"
   - name: Debian
     versions:
-      - all
+      # Excludes 13: no openjdk-17-jdk package, same reason as EL 10 above.
+      - "12"
+      - "11"
   - name: Fedora
     versions:
       # Excludes 45: it ships Python 3.15.0b3, whose dataclasses module
       # dropped _is_type, breaking ansible-core's AnsiballZ module wrapper.
-      - "44"
+      # Excludes 44: no java-17-openjdk package, same reason as EL 10 above.
       - "43"
   - name: Ubuntu
     versions:
