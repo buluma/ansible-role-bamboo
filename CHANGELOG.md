@@ -1,5 +1,9 @@
 # Changelog
 
+## [v26.6.2](https://github.com/buluma/ansible-role-bamboo/tree/v26.6.2) (2026-07-22)
+
+[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v26.6.1...v26.6.2)
+
 ## [v26.6.1](https://github.com/buluma/ansible-role-bamboo/tree/v26.6.1) (2026-06-15)
 
 [Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v26.6.0...v26.6.1)
@@ -26,6 +30,7 @@
 
 - Bump dependabot/fetch-metadata from 1 to 2 [\#16](https://github.com/buluma/ansible-role-bamboo/pull/16) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#13](https://github.com/buluma/ansible-role-bamboo/pull/13) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump release-drafter/release-drafter from 5 to 6 [\#12](https://github.com/buluma/ansible-role-bamboo/pull/12) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v24.2.26](https://github.com/buluma/ansible-role-bamboo/tree/v24.2.26) (2024-02-19)
 
@@ -33,7 +38,6 @@
 
 **Merged pull requests:**
 
-- Bump release-drafter/release-drafter from 5 to 6 [\#12](https://github.com/buluma/ansible-role-bamboo/pull/12) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#11](https://github.com/buluma/ansible-role-bamboo/pull/11) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v0.3.0](https://github.com/buluma/ansible-role-bamboo/tree/v0.3.0) (2024-01-20)
