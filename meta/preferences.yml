@@ -10,8 +10,8 @@ platforms:
   - name: Debian
     versions:
       # Excludes 13: no openjdk-17-jdk package, same reason as EL 10 above.
+      # Excludes 11: EOL, and nothing in this role requires it over 12.
       - "12"
-      - "11"
   # Fedora excluded entirely: java-17-openjdk was only ever packaged
   # through Fedora 41 (already EOL); no currently-supported Fedora
   # release can satisfy this role's Java 17 requirement.
