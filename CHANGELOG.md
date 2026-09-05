@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- ci: drop Debian 11 from CI matrix [\#27](https://github.com/buluma/ansible-role-bamboo/pull/27) ([buluma](https://github.com/buluma))
 - Bump ansible/ansible-lint from 26.6.0 to 26.8.0 [\#26](https://github.com/buluma/ansible-role-bamboo/pull/26) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v26.6.2](https://github.com/buluma/ansible-role-bamboo/tree/v26.6.2) (2026-07-22)
