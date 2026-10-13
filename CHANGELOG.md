@@ -1,11 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-bamboo/tree/HEAD)
+## [v26.10.9](https://github.com/buluma/ansible-role-bamboo/tree/v26.10.9) (2026-10-05)
 
-[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v26.9.0...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v26.9.0...v26.10.9)
 
 **Merged pull requests:**
 
+- Bump release-drafter/release-drafter from 7.7.0 to 7.9.0 [\#30](https://github.com/buluma/ansible-role-bamboo/pull/30) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Enable native Dependabot auto-merge with required CI [\#29](https://github.com/buluma/ansible-role-bamboo/pull/29) ([buluma](https://github.com/buluma))
 
 ## [v26.9.0](https://github.com/buluma/ansible-role-bamboo/tree/v26.9.0) (2026-09-05)
