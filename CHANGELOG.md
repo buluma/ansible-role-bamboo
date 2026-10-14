@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-bamboo/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v26.10.9...HEAD)
+
+**Merged pull requests:**
+
+- Bump release-drafter/release-drafter from 7.9.0 to 7.10.0 [\#32](https://github.com/buluma/ansible-role-bamboo/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v26.10.9](https://github.com/buluma/ansible-role-bamboo/tree/v26.10.9) (2026-10-05)
 
 [Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v26.9.0...v26.10.9)
