@@ -6,6 +6,9 @@
 
 **Merged pull requests:**
 
+- ANS-70: Fix changelog workflow [\#37](https://github.com/buluma/ansible-role-bamboo/pull/37) ([buluma](https://github.com/buluma))
+- ANS-60: Fetch opensuse key and repo over https [\#36](https://github.com/buluma/ansible-role-bamboo/pull/36) ([buluma](https://github.com/buluma))
+- Bump release-drafter/release-drafter from 7.10.0 to 7.11.0 [\#35](https://github.com/buluma/ansible-role-bamboo/pull/35) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump ansible/ansible-lint from 26.10.1 to 26.11.0 [\#34](https://github.com/buluma/ansible-role-bamboo/pull/34) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump ansible/ansible-lint from 26.10.0 to 26.10.1 [\#33](https://github.com/buluma/ansible-role-bamboo/pull/33) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 7.9.0 to 7.10.0 [\#32](https://github.com/buluma/ansible-role-bamboo/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -40,11 +43,6 @@
 ## [v26.6.0](https://github.com/buluma/ansible-role-bamboo/tree/v26.6.0) (2026-06-14)
 
 [Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v24.3.31...v26.6.0)
-
-**Closed issues:**
-
-- Update action [\#6](https://github.com/buluma/ansible-role-bamboo/issues/6)
-- rebuild action [\#5](https://github.com/buluma/ansible-role-bamboo/issues/5)
 
 **Merged pull requests:**
 
@@ -88,11 +86,6 @@
 ## [v0.1.1](https://github.com/buluma/ansible-role-bamboo/tree/v0.1.1) (2023-12-28)
 
 [Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v0.1.0...v0.1.1)
-
-**Closed issues:**
-
-- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#7](https://github.com/buluma/ansible-role-bamboo/issues/7)
-- check suse and debian @buluma [\#1](https://github.com/buluma/ansible-role-bamboo/issues/1)
 
 ## [v0.1.0](https://github.com/buluma/ansible-role-bamboo/tree/v0.1.0) (2023-12-24)
 
