@@ -80,9 +80,6 @@ bamboo_master_version: "9.4.4"
 bamboo_master_fqdn: ""
 bamboo_master_https: false
 bamboo_master_port: ""
-bamboo_master_include_jdk: true
-bamboo_master_openjdk_version: "1.8.0"
-# bamboo_master_openjdk_version: 17
 bamboo_master_user: bamboo
 bamboo_master_application_folder: /opt/atlassian/bamboo
 bamboo_master_data_folder: /var/atlassian/application-data/bamboo
@@ -118,9 +115,8 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|10, 9|
-|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
-|[Fedora](https://hub.docker.com/r/buluma/docker-molecule-images)|44, 43|
+|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|9|
+|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|12|
 |[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
 
 The minimum version of Ansible required is 2.19, tests have been done on:
