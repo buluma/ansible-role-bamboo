@@ -2,10 +2,19 @@
 
 ## [Unreleased](https://github.com/buluma/ansible-role-bamboo/tree/HEAD)
 
-[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v26.10.9...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v26.11.0...HEAD)
 
 **Merged pull requests:**
 
+- Regenerate files with ansible-generator [\#39](https://github.com/buluma/ansible-role-bamboo/pull/39) ([buluma](https://github.com/buluma))
+
+## [v26.11.0](https://github.com/buluma/ansible-role-bamboo/tree/v26.11.0) (2026-11-22)
+
+[Full Changelog](https://github.com/buluma/ansible-role-bamboo/compare/v26.10.9...v26.11.0)
+
+**Merged pull requests:**
+
+- Update CHANGELOG.md [\#38](https://github.com/buluma/ansible-role-bamboo/pull/38) ([github-actions[bot]](https://github.com/apps/github-actions))
 - ANS-70: Fix changelog workflow [\#37](https://github.com/buluma/ansible-role-bamboo/pull/37) ([buluma](https://github.com/buluma))
 - ANS-60: Fetch opensuse key and repo over https [\#36](https://github.com/buluma/ansible-role-bamboo/pull/36) ([buluma](https://github.com/buluma))
 - Bump release-drafter/release-drafter from 7.10.0 to 7.11.0 [\#35](https://github.com/buluma/ansible-role-bamboo/pull/35) ([dependabot[bot]](https://github.com/apps/dependabot))
